@@ -17,6 +17,19 @@
   font-family: "Pathway Gothic One", sans-serif;
   color: #fff;
 }
+.timeline__content-title.animation{
+  animation: titleAnime 1s ease-in-out;
+}
+@keyframes titleAnime{
+  0%{
+    transform: scale(1.2);
+    opacity: 0;
+  }
+  100%{
+    transform: scale(1);
+    opacity: 1;
+  }
+}
 .timeline__content-title2 {
   font-weight: normal;
   font-size: 30px;

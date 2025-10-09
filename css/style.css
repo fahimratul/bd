@@ -17,19 +17,25 @@
   font-family: "Pathway Gothic One", sans-serif;
   color: #fff;
 }
-.timeline__content-title.animation{
-  animation: titleAnime 1s ease-in-out;
+.timeline__content-title.animation {
+  overflow: hidden;
+  border-right: .15em solid #fff;
+  white-space: nowrap;
+  animation:
+    typing 2.5s steps(20, end) infinite,
+    blink-caret .75s step-end infinite;
 }
-@keyframes titleAnime{
-  0%{
-    transform: scale(1.2);
-    opacity: 0;
-  }
-  100%{
-    transform: scale(1);
-    opacity: 1;
-  }
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
 }
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #fff; }
+}
+
 .timeline__content-title2 {
   font-weight: normal;
   font-size: 30px;

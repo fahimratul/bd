@@ -17,12 +17,12 @@
   font-family: "Pathway Gothic One", sans-serif;
   color: #fff;
 }
-.timeline__content-title.animation {
+.timeline-header__title.animation {
   overflow: hidden;
   border-right: .15em solid #fff;
   white-space: nowrap;
   animation:
-    typing 2.5s steps(20, end) infinite,
+    typing 2.5s steps(20, end),
     blink-caret .75s step-end infinite;
 }
 
@@ -189,6 +189,10 @@
   letter-spacing:normal;
   margin: 10px 0 0 0;
   font-weight: normal;
+  overflow: hidden;
+  animation:
+    typing 2.5s steps(20, end) 2.5s,
+    blink-caret .75s step-end infinite 2.5s;
 }
 
 .demo-footer {
@@ -516,4 +520,69 @@ img:nth-child(3) {
   color: #333;
   font-weight: bold;
   font-size: 16px;
+}
+
+.bookmarkBtn {
+  width: 120px;
+  height: 40px;
+  border-radius: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.349);
+  background-color: rgb(12, 12, 12);
+  display: block;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  overflow: hidden;
+  z-index: 1000;
+  right: 20px;
+  top: 20px;
+}
+
+.IconContainer {
+  width: 30px;
+  height: 30px;
+  background: linear-gradient(to bottom, rgb(255, 136, 255), rgb(172, 70, 255));
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 2;
+  margin-top: 3px;
+  transition-duration: 0.3s;
+}
+
+.icon {
+  border-radius: 1px;
+}
+
+.text {
+  height: 100%;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transform: translateY(-49px) translateX(30px);
+  transition-duration: 0.3s;
+  font-size: 1.04em;
+}
+
+.bookmarkBtn:hover .IconContainer {
+  width: 105px;
+  transition-duration: 0.3s;
+}
+
+.bookmarkBtn:hover .text {
+  transform: translateY(45px) translateX(30px);
+  width: 0;
+  font-size: 0;
+  transition-duration: 0.3s;
+}
+
+.bookmarkBtn:active {
+  transform: scale(0.95);
+  transition-duration: 0.3s;
 }

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - FAHIM RATUL</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <h1>Admin Dashboard</h1>
+            <div class="user-info">
+                <span>Welcome, Admin</span>
+                <button class="logout-btn" onclick="logout()">Logout</button>
+            </div>
+        </header>
+        
+        <main class="dashboard-main">
+            <div class="dashboard-grid">
+                <div class="dashboard-card">
+                    <h3>Users</h3>
+                    <div class="card-content">
+                        <div class="stat-number">125</div>
+                        <div class="stat-label">Total Users</div>
+                    </div>
+                </div>
+                
+                <div class="dashboard-card">
+                    <h3>Projects</h3>
+                    <div class="card-content">
+                        <div class="stat-number">43</div>
+                        <div class="stat-label">Active Projects</div>
+                    </div>
+                </div>
+                
+                <div class="dashboard-card">
+                    <h3>Revenue</h3>
+                    <div class="card-content">
+                        <div class="stat-number">$15,240</div>
+                        <div class="stat-label">This Month</div>
+                    </div>
+                </div>
+                
+                <div class="dashboard-card">
+                    <h3>Analytics</h3>
+                    <div class="card-content">
+                        <div class="stat-number">89%</div>
+                        <div class="stat-label">Success Rate</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="recent-activity">
+                <h2>Recent Activity</h2>
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <span class="activity-time">2 hours ago</span>
+                        <span class="activity-text">New user registered</span>
+                    </div>
+                    <div class="activity-item">
+                        <span class="activity-time">4 hours ago</span>
+                        <span class="activity-text">Project completed successfully</span>
+                    </div>
+                    <div class="activity-item">
+                        <span class="activity-time">1 day ago</span>
+                        <span class="activity-text">System maintenance completed</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script>
+        // Check if user is authenticated on page load
+        window.addEventListener('DOMContentLoaded', function() {
+            const isAuthenticated = sessionStorage.getItem('adminAuthenticated');
+            if (!isAuthenticated) {
+                window.location.href = 'login.html';
+            }
+        });
+        
+        function logout() {
+            sessionStorage.removeItem('adminAuthenticated');
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+</html>

@@ -33,6 +33,18 @@ ip dhcp excluded-address 192.168.10.2 192.168.10.254
 exit 
 copy running-config startup-config
 </p>
+<p>
+R1>
+enable
+config terminal
+router ospf 1
+network 10.0.0.0 0.255.255.255 area 10
+network 11.0.0.0 0.255.255.255 area 20
+network 192.168.2.0 0.0.0.255 area 0
+exit
+exit
+show ip ospf neighbor
+</p>
 </div>
 <div class="timeline-container" id="timeline-1">
   <div class="timeline-header">
@@ -40,6 +52,29 @@ copy running-config startup-config
     <h2 class="timeline-header__subtitle">FLG OFFR  MORSHED</h2>
 
   </div>
+<div>
+<p> enable 
+conf t
+ip dhcp pool DCHP
+network 192.168.10.0 255.255.255.0
+default-router 192.168.10.1
+ip dhcp excluded-address 192.168.10.2 192.168.10.254
+exit 
+copy running-config startup-config
+</p>
+<p>
+R1>
+enable
+config terminal
+router ospf 1
+network 10.0.0.0 0.255.255.255 area 10
+network 11.0.0.0 0.255.255.255 area 20
+network 192.168.2.0 0.0.0.255 area 0
+exit
+exit
+show ip ospf neighbor
+</p>
+</div>
   <div class="timeline">
     <div class="timeline-item" data-text="BIRTH">
       <div class="timeline__content"><img class="timeline__img" src="unnamed.jpg"/>

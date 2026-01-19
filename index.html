@@ -23,7 +23,17 @@
     <li><a href="#timeline-1">CONTACT</a></li>
   </ul>
 </nav>
-
+<div>
+<p> enable 
+conf t
+ip dhcp pool DCHP
+network 192.168.10.0 255.255.255.0
+default-router 192.168.10.1
+ip dhcp excluded-address 192.168.10.2 192.168.10.254
+exit 
+copy running-config startup-config
+</p>
+</div>
 <div class="timeline-container" id="timeline-1">
   <div class="timeline-header">
     <h2 class="timeline-header__title">FAHIM RATUL</h2>
